@@ -1,5 +1,13 @@
 name: Actions workflow
-on: [push, pull_request]
+on:
+    repository_dispatch:
+      types: "test"
+
+    pull_request:
+      types:
+        - "opened"
+        - "reopened"
+
 jobs:
     Github-Actions:
       runs-on: ubuntu-latest
