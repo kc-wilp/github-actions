@@ -1,0 +1,17 @@
+name: Actions workflow
+on: [push]
+jobs:
+    Github-Actions:
+      runs-on: ubuntu-latest
+      steps:
+        - name: Checkout the github repository
+          uses: actions/checkout
+        - run: echo " ${{ github.repository }}"
+        - name: List files
+          run: |
+            ls ${{ github.workspace }}
+
+
+
+
+
